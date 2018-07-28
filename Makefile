@@ -3,7 +3,7 @@
 default: upload
 
 run:
-	./scripts/pymath
+	PYTHONPATH=. ./scripts/pymath
 
 build:
 	./setup.py sdist bdist_wheel --universal
