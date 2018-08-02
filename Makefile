@@ -1,9 +1,12 @@
-.PHONY: default run build upload clean install uninstall
+.PHONY: default run build upload clean install uninstall test
 
 default: upload
 
 run:
 	PYTHONPATH=. ./scripts/pymath
+
+test:
+	pytest
 
 build:
 	./setup.py sdist bdist_wheel --universal
