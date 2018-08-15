@@ -7,7 +7,7 @@ Launch the python repl imported with all of the functions from `math` and `itert
 **Note**: `~/.local/bin` should be in your `PATH` for `--user` installs.
 
 ```shell
-pip install --user pymath2
+pip install [--user] pymath2
 ```
 
 ## Usage
