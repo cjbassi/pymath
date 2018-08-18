@@ -7,7 +7,7 @@ setup(
     version='0.2.0',
     packages=find_packages(exclude=('tests',)),
     scripts=['scripts/pymath'],
-    description='Script that launches python repl with a bunch of handy function imported',
+    description='Easy calculations on the command line with Python',
     url='https://github.com/cjbassi/pymath',
     install_requires=['fire'],
 )
