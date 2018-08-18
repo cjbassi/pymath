@@ -1,6 +1,6 @@
 {
     "python.unitTest.pyTestArgs": [
-        "pymath"
+        "test"
     ],
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.nosetestsEnabled": false,
