@@ -9,4 +9,5 @@ setup(
     scripts=['scripts/pymath'],
     description='Script that launches python repl with a bunch of handy function imported',
     url='https://github.com/cjbassi/pymath',
+    install_requires=['fire'],
 )

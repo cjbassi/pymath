@@ -12,7 +12,7 @@ def convert_base(n: int, b: int) -> List[int]:
 
 
 def benfords_law(_list: List[float], first_digit=True) -> Dict[int, Tuple[int, float]]:
-    # can also use method='last_digit'
+    """Can also use method='last_digit'."""
     count: Dict[int, int] = {}
     start = 1 if first_digit else 0
     for i in range(start, 10):
