@@ -35,7 +35,7 @@ or run an expression with:
 To start the repl, do:
 
 ```shell
-> pymath -- --interactive
+> pymath -- -i
 
 >>> factorial(5)
 120
