@@ -20,13 +20,15 @@ Run a function from the command line by doing:
 
 ```shell
 > pymath factorial 5
+
 120
 ```
 
 or run an expression with:
 
-```
+```shell
 > pymath 'factorial(5)+1'
+
 121
 ```
 
@@ -38,6 +40,6 @@ To start the repl, do:
 > pymath -- -i
 
 >>> factorial(5)
+
 120
->>>
 ```
