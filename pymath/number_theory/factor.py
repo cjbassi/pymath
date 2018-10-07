@@ -21,12 +21,12 @@ def gcd(a: int, *terms: int) -> int:
     return reduce(math.gcd, [a] + list(terms))
 
 
-def extended_lcm(a: int, *terms: int) -> List[int]:
+def xlcm(a: int, *terms: int) -> List[int]:
     _lcm = lcm(a, *terms)
     return [_lcm] + list(map(lambda a: _lcm // a, [a] + list(terms)))
 
 
-def extended_gcd(b: int, a: int) -> Tuple[int, int, int]:
+def xgcd(b: int, a: int) -> Tuple[int, int, int]:
     x0, x1, y0, y1 = 1, 0, 0, 1
     while a != 0:
         q, b, a = b // a, a, b % a

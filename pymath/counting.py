@@ -4,12 +4,12 @@ from typing import Collection, Iterator, List, TypeVar
 T = TypeVar('T')
 
 
-def C(n: int, k: int) -> int:
-    return factorial(n)//(factorial(n-k)*factorial(k))
+def Choose(n: int, k: int) -> int:
+    return factorial(n) // (factorial(n - k) * factorial(k))
 
 
-def P(n: int, k: int) -> int:
-    return factorial(n)//(factorial(n-k))
+def Permute(n: int, k: int) -> int:
+    return factorial(n) // (factorial(n - k))
 
 
 def powerset(collection: Collection[T]) -> Iterator[List[T]]:
