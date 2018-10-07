@@ -1,45 +1,38 @@
 # pymath
 
-Perform quick calculations either on the command line or in the Python repl. Imports and provides for use all of the functions from `math`, `itertools`, and `statistics` along with some extra math functions defined in the [pymath](https://github.com/cjbassi/pymath/tree/master/pymath) folder.
+Perform math calculations either on the command line or in the Python repl. Imports all of the functions from the `math` and `statistics` modules and the combinatoric functions from the `itertools` module into the global namespace for convenience. Also includes some extra math functions defined in the [pymath](https://github.com/cjbassi/pymath/tree/master/pymath) folder.
 
 ## Installation
-
-**Note**: `~/.local/bin` should be in your `PATH` for `--user` installs.
 
 ```shell
 pip install [--user] pymath2
 ```
 
+**Note**: `~/.local/bin` should be in your `$PATH` for `--user` installs.
+
 ## Usage
 
-Uses [python-fire](https://github.com/google/python-fire) to handle input.
-
-### Command line
-
-Run a function from the command line by doing:
-
-```shell
-> pymath factorial 5
-
-120
-```
-
-or run an expression with:
+Run an expression from the command line:
 
 ```shell
 > pymath 'factorial(5)+1'
-
 121
 ```
 
-### Repl
-
-To start the repl, do:
+Or perform multiple calculations in the Python repl:
 
 ```shell
-> pymath -- -i
+> pymath
 
->>> factorial(5)
+>>> extended_gcd(5, 2)
+(1, 1, -2)
+>>> list(primes(5))
+[2, 3, 5, 7, 11]
+>>>
+```
 
-120
+List all available functions:
+
+```shell
+pymath -l
 ```

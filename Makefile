@@ -6,10 +6,7 @@ help:  ## Prints help for targets with comments
 	@grep -E '^[a-zA-Z._-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 run:  ## Run the program locally on the command line
-	PYTHONPATH=. ./scripts/pymath $(filter-out $@,$(MAKECMDGOALS))
-
-interactive:  ## Run the program locally in the python repl
-	PYTHONPATH=. ./scripts/pymath -- --interactive
+	PYTHONPATH=. ./scripts/pymath $(ARGS)
 
 test: ## Run all tests
 	pytest

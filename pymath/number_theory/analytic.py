@@ -2,6 +2,8 @@ from typing import Optional, Tuple
 
 from . import number_types, primes
 
+__all__ = ['goldbach', 'goldbach_triple']
+
 
 def goldbach(n: int) -> Optional[Tuple[int, int]]:
     if n <= 2 or number_types.is_odd(n):

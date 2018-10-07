@@ -5,10 +5,15 @@ from typing import Iterator, List, Tuple
 
 from . import number_types
 
+__all__ = [
+    'are_coprime', 'coprimes', 'xgcd', 'xlcm',
+    'factors', 'gcd', 'largest_prime_factor', 'lcm', 'phi', 'prime_factors'
+]
+
 
 def factors(n: int) -> Iterator[int]:
     n = abs(n)
-    return (i for i in range(1, n+1) if n % i == 0)
+    return (i for i in range(1, n + 1) if n % i == 0)
 
 
 def lcm(a: int, *terms: int) -> int:
@@ -68,7 +73,7 @@ def phi(n: int) -> int:
     if n == 1:
         return 1
     if number_types.is_prime(n):
-        return n-1
+        return n - 1
     if log(n, 2).is_integer():
         return n // 2
     return sum(1 for i in range(1, n) if math.gcd(n, i) == 1)

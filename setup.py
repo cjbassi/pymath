@@ -9,5 +9,4 @@ setup(
     scripts=['scripts/pymath'],
     description='Easy calculations on the command line with Python',
     url='https://github.com/cjbassi/pymath',
-    install_requires=['fire'],
 )
