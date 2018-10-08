@@ -32,18 +32,18 @@ def gcd(a: int, *terms: int) -> int:
     return reduce(math.gcd, [a] + list(terms))
 
 
-def xlcm(a: int, *terms: int) -> List[int]:
+def xlcm(a: int, *terms: int) -> Tuple[int, List[int]]:
     _lcm = lcm(a, *terms)
-    return [_lcm] + list(map(lambda a: _lcm // a, [a] + list(terms)))
+    return (_lcm, list(map(lambda a: _lcm // a, [a] + list(terms))))
 
 
-def xgcd(b: int, a: int) -> Tuple[int, int, int]:
+def xgcd(b: int, a: int) -> Tuple[int, Tuple[int, int]]:
     x0, x1, y0, y1 = 1, 0, 0, 1
     while a != 0:
         q, b, a = b // a, a, b % a
         x0, x1 = x1, x0 - q * x1
         y0, y1 = y1, y0 - q * y1
-    return b, x0, y0
+    return (b, (x0, y0))
 
 
 def prime_factors_iter(n: int) -> Iterator[int]:
