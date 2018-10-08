@@ -41,9 +41,11 @@ def create_math_globals():
         'combinations', 'combinations_with_replacement', 'permutations',
         'product',
     ]
-    math_globals = merge_dicts(vars(math), vars(statistics), vars(pymath),
+    math_globals = merge_dicts(vars(math),
+                               vars(statistics),
                                dict_from_keys(vars(itertools),
-                                              itertools_imports))
+                                              itertools_imports),
+                               vars(pymath))
     remove_globals = {
         '__name__',
         '__doc__',
