@@ -14,12 +14,13 @@ def Permute(n: int, k: int) -> int:
     return factorial(n) // (factorial(n - k))
 
 
-def powerset(collection: Collection[T]) -> Iterator[List[T]]:
-    def powerset_impl(seq):
+def powerset(collection: Collection[T]) -> List[List[T]]:
+    def powerset_recur(seq: List[T]) -> Iterator[List[T]]:
         if len(seq) == 0:
             yield []
         else:
-            for item in powerset(seq[1:]):
+            for item in powerset_recur(seq[1:]):
                 yield item
                 yield [seq[0]] + item
-    return powerset_impl(list(collection))
+
+    return list(powerset_recur(list(collection)))

@@ -6,20 +6,26 @@ from typing import Iterator, List, Tuple
 from . import number_types
 
 __all__ = [
-    'are_coprime', 'coprimes', 'xgcd', 'xlcm',
-    'factors', 'gcd', 'largest_prime_factor', 'lcm', 'phi', 'prime_factors'
+    'are_coprime', 'coprimes', 'xgcd', 'xlcm', 'factors_iter', 'factors', 'gcd',
+    'largest_prime_factor', 'lcm', 'phi', 'prime_factors', 'prime_factors_iter',
+    'coprimes_iter',
 ]
 
 
-def factors(n: int) -> Iterator[int]:
+def factors_iter(n: int) -> Iterator[int]:
     n = abs(n)
     return (i for i in range(1, n + 1) if n % i == 0)
 
 
+def factors(n: int) -> List[int]:
+    return list(factors_iter(n))
+
+
 def lcm(a: int, *terms: int) -> int:
-    def lcm_impl(a: int, b: int) -> int:
+    def lcm_binary(a: int, b: int) -> int:
         return a * b // math.gcd(a, b)
-    return reduce(lcm_impl, [a] + list(terms))
+
+    return reduce(lcm_binary, [a] + list(terms))
 
 
 def gcd(a: int, *terms: int) -> int:
@@ -40,7 +46,7 @@ def xgcd(b: int, a: int) -> Tuple[int, int, int]:
     return b, x0, y0
 
 
-def prime_factors(n: int) -> Iterator[int]:
+def prime_factors_iter(n: int) -> Iterator[int]:
     i = 2
     while i * i <= n:
         if n % i != 0:
@@ -50,6 +56,10 @@ def prime_factors(n: int) -> Iterator[int]:
             yield i
     if n > 1:
         yield n
+
+
+def prime_factors(n: int) -> List[int]:
+    return list(prime_factors_iter(n))
 
 
 def largest_prime_factor(n: int) -> int:
@@ -79,10 +89,14 @@ def phi(n: int) -> int:
     return sum(1 for i in range(1, n) if math.gcd(n, i) == 1)
 
 
-def coprimes(n: int) -> Iterator[int]:
+def coprimes_iter(n: int) -> Iterator[int]:
     """Returns {x in N : x < n and x coprime to n}."""
     if number_types.is_prime(n):
         return iter(range(1, n))
     if log(n, 2).is_integer():
         return iter(range(1, n, 2))
     return (i for i in range(1, n) if math.gcd(n, i) == 1)
+
+
+def coprimes(n: int) -> List[int]:
+    return list(coprimes(n))
