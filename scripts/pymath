@@ -36,16 +36,26 @@ def create_math_globals():
     import itertools
     import math
     import statistics
+    import fractions
+    import decimal
 
     itertools_imports = [
         'combinations', 'combinations_with_replacement', 'permutations',
         'product',
     ]
+    fraction_imports = ['Fraction']
+    decimal_imports = ['Decimal']
+
     math_globals = merge_dicts(vars(math),
                                vars(statistics),
+                               dict_from_keys(vars(decimal),
+                                              decimal_imports),
+                               dict_from_keys(vars(fractions),
+                                              fraction_imports),
                                dict_from_keys(vars(itertools),
                                               itertools_imports),
                                vars(pymath))
+
     remove_globals = {
         '__name__',
         '__doc__',
@@ -62,8 +72,6 @@ def create_math_globals():
         'collections',
         'math',
         'numbers',
-        'Fraction',
-        'Decimal',
         'groupby',
         'StatisticsError',
         '_sum',

@@ -1,6 +1,14 @@
 # pymath
 
-Perform math calculations either on the command line or in the Python repl. Imports all of the functions from the `math` and `statistics` modules and the combinatoric functions from the `itertools` module into the global namespace for convenience. Also includes some extra math functions defined in the [pymath](https://github.com/cjbassi/pymath/tree/master/pymath) folder.
+Perform math calculations either on the command line or in the Python repl.
+Imports the following functions/classes/variables into the global namespace for convenience:
+
+- everything from [math](https://docs.python.org/3/library/math.html)
+- everything from [statistics](https://docs.python.org/3/library/statistics.html)
+- the combinatoric functions from [itertools](https://docs.python.org/3/library/itertools.html)
+- the `Fraction` class from [fractions](https://docs.python.org/3/library/fractions.html)
+- the `Decimal` class from [decimal](https://docs.python.org/3/library/decimal.html)
+- additional math functions defined in the [pymath](https://github.com/cjbassi/pymath/tree/master/pymath) folder
 
 ## Installation
 
@@ -26,7 +34,7 @@ Or perform multiple calculations in the Python repl:
 
 >>> extended_gcd(5, 2)
 (1, 1, -2)
->>> list(primes(5))
+>>> primes(5)
 [2, 3, 5, 7, 11]
 >>>
 ```
