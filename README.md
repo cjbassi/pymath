@@ -31,8 +31,7 @@ Or perform multiple calculations in the Python repl:
 
 ```shell
 > pymath
-
->>> extended_gcd(5, 2)
+>>> xgcd(5, 2)
 (1, 1, -2)
 >>> primes(5)
 [2, 3, 5, 7, 11]
