@@ -6,6 +6,8 @@ from pathlib import Path
 
 import pymath
 
+VERSION = '2.0.1'
+
 
 def dict_from_keys(_dict, _list):
     new_dict = {}
@@ -103,11 +105,14 @@ def create_math_globals():
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
-        math_globals = create_math_globals()
-        if sys.argv[1] == '-l':
-            print_dict(math_globals)
+        if sys.argv[1] in ['-v', '-V', '--version']:
+            print(VERSION)
         else:
-            print(eval(sys.argv[1], math_globals))
+            math_globals = create_math_globals()
+            if sys.argv[1] == '-l':
+                print_dict(math_globals)
+            else:
+                print(eval(sys.argv[1], math_globals))
     else:
         pymath_path = Path(pymath.__file__).resolve().parent / '__main__.py'
         subprocess.call(['python', '-i', pymath_path])
