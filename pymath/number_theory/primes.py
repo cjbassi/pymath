@@ -1,5 +1,5 @@
 from collections import defaultdict
-from itertools import islice
+from itertools import islice, takewhile
 from math import log
 from typing import Dict, Iterator, List, Optional
 
@@ -8,13 +8,6 @@ __all__ = [
     'mersenne_primes_iter', 'mersenne_primes', 'mersenne_primes_up_to_iter',
     'mersenne_primes_up_to',
 ]
-
-
-def yield_values_up_to(n: int, _iter: Iterator[int]):
-    num = next(_iter)
-    while num <= n:
-        yield n
-        num = next(_iter)
 
 
 def primes_iter(n: Optional[int] = None) -> Iterator[int]:
@@ -41,7 +34,7 @@ def primes(n: Optional[int] = None) -> List[int]:
 
 
 def primes_up_to_iter(n: int) -> Iterator[int]:
-    return yield_values_up_to(n, primes_iter())
+    return takewhile(lambda x: x <= n, primes_iter())
 
 
 def primes_up_to(n: int) -> List[int]:
@@ -73,7 +66,7 @@ def mersenne_primes(n: Optional[int] = None) -> List[int]:
 
 
 def mersenne_primes_up_to_iter(n: int) -> Iterator[int]:
-    return yield_values_up_to(n, mersenne_primes_iter())
+    return takewhile(lambda x: x <= n, mersenne_primes_iter())
 
 
 def mersenne_primes_up_to(n: int) -> List[int]:
