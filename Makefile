@@ -21,7 +21,7 @@ install:  ## Install package locally
 	pip install --user .
 
 uninstall:  ## Uninstall local package
-	pip uninstall pymath
+	pip uninstall pymath2
 
 clean:  ## Clean all build files
 	rm -rf dist build *.egg-info
