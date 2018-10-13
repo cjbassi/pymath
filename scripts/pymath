@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pymath
 
-VERSION = '2.0.1'
+VERSION = '2.1.1'
 
 
 def dict_from_keys(_dict, _list):
