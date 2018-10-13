@@ -4,13 +4,13 @@ from math import log
 from typing import Dict, Iterator, List, Optional
 
 __all__ = [
-    'primes_iter', 'primes', 'primes_up_to_iter', 'primes_up_to',
-    'mersenne_primes_iter', 'mersenne_primes', 'mersenne_primes_up_to_iter',
-    'mersenne_primes_up_to',
+    'primes_generator', 'primes', 'primes_up_to_generator', 'primes_up_to',
+    'mersenne_primes_generator', 'mersenne_primes',
+    'mersenne_primes_up_to_generator', 'mersenne_primes_up_to',
 ]
 
 
-def primes_iter(n: Optional[int] = None) -> Iterator[int]:
+def primes_generator(n: Optional[int] = None) -> Iterator[int]:
     def infinite_primes() -> Iterator[int]:
         D: Dict[int, List[int]] = defaultdict(list)
         q = 2
@@ -30,18 +30,18 @@ def primes_iter(n: Optional[int] = None) -> Iterator[int]:
 
 
 def primes(n: Optional[int] = None) -> List[int]:
-    return list(primes_iter(n))
+    return list(primes_generator(n))
 
 
-def primes_up_to_iter(n: int) -> Iterator[int]:
-    return takewhile(lambda x: x <= n, primes_iter())
+def primes_up_to_generator(n: int) -> Iterator[int]:
+    return takewhile(lambda x: x <= n, primes_generator())
 
 
 def primes_up_to(n: int) -> List[int]:
-    return list(primes_up_to_iter(n))
+    return list(primes_up_to_generator(n))
 
 
-def mersenne_primes_iter(n: Optional[int] = None) -> Iterator[int]:
+def mersenne_primes_generator(n: Optional[int] = None) -> Iterator[int]:
     def infinite_mersenne_primes() -> Iterator[int]:
         D: Dict[int, List[int]] = defaultdict(list)
         q = 2
@@ -62,12 +62,12 @@ def mersenne_primes_iter(n: Optional[int] = None) -> Iterator[int]:
 
 
 def mersenne_primes(n: Optional[int] = None) -> List[int]:
-    return list(mersenne_primes_iter(n))
+    return list(mersenne_primes_generator(n))
 
 
-def mersenne_primes_up_to_iter(n: int) -> Iterator[int]:
-    return takewhile(lambda x: x <= n, mersenne_primes_iter())
+def mersenne_primes_up_to_generator(n: int) -> Iterator[int]:
+    return takewhile(lambda x: x <= n, mersenne_primes_generator())
 
 
 def mersenne_primes_up_to(n: int) -> List[int]:
-    return list(mersenne_primes_iter(n))
+    return list(mersenne_primes_generator(n))
