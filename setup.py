@@ -9,7 +9,6 @@ setup(
     author='Caleb Bassi',
     url='https://github.com/cjbassi/pymath',
     packages=find_packages(exclude=['*.tests', '*.tests.*', 'tests.*', 'tests']),
-    include_package_data=True,
     license='MIT',
     scripts=['scripts/pymath'],
 )
