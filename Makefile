@@ -19,8 +19,8 @@ test: ## Run all tests
 build:  ## Build the project to prepare for uploading
 	./setup.py sdist bdist_wheel --universal
 
-.PHONY: upload
-upload: build  ## Upload build to PyPI
+.PHONY: publish
+publish: build  ## Publish build to PyPI
 	twine upload dist/*
 
 .PHONY: install
