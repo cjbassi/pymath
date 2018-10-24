@@ -99,4 +99,4 @@ def coprimes_generator(n: int) -> Iterator[int]:
 
 
 def coprimes(n: int) -> List[int]:
-    return list(coprimes(n))
+    return list(coprimes_generator(n))
