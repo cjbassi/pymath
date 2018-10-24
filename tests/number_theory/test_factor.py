@@ -22,13 +22,13 @@ def test_gcd():
     assert gcd(60, 18, 3) == 3
 
 
-def test_extended_lcm():
-    assert extended_lcm(5, 2) == [10, 2, 5]
-    assert extended_lcm(5, 2, 3) == [30, 6, 15, 10]
+def test_xlcm():
+    assert xlcm(5, 2) == (10, [2, 5])
+    assert xlcm(5, 2, 3) == (30, [6, 15, 10])
 
 
-def test_extended_gcd():
-    assert extended_gcd(10, 6) == (2, -1, 2)
+def test_xgcd():
+    assert xgcd(10, 6) == (2, (-1, 2))
 
 
 def test_prime_factors():
@@ -44,13 +44,13 @@ def test_largest_prime_factor():
 
 
 def test_coprime():
-    assert are_coprime(5, 2) == True
-    assert are_coprime(2, 2) == False
-    assert are_coprime(2, 1) == True
-    assert are_coprime(2, 0) == False
-    assert are_coprime(0, 0) == False
-    assert are_coprime(10, 2, 4) == False
-    assert are_coprime(10, 3, 4) == True
+    assert are_coprime(5, 2)
+    assert not are_coprime(2, 2)
+    assert are_coprime(2, 1)
+    assert not are_coprime(2, 0)
+    assert not are_coprime(0, 0)
+    assert not are_coprime(10, 2, 4)
+    assert are_coprime(10, 3, 4)
 
 
 def test_phi():
