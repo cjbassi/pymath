@@ -1,3 +1,4 @@
+from functools import reduce
 from math import factorial
 from typing import Collection, Iterator, List, TypeVar
 
@@ -6,8 +7,11 @@ __all__ = ['Choose', 'Permute', 'powerset']
 T = TypeVar('T')
 
 
-def Choose(n: int, k: int) -> int:
-    return factorial(n) // (factorial(n - k) * factorial(k))
+def Choose(n: int, *k: int) -> int:
+    if len(k) == 1:
+        return factorial(n) // (factorial(n - k[0]) * factorial(k[0]))
+    return factorial(n) // reduce(lambda x, y: x * y,
+                                  map(lambda x: factorial(x), k))
 
 
 def Permute(n: int, k: int) -> int:
