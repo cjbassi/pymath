@@ -17,7 +17,7 @@ def convert_base_10(x: int, base: int) -> str:
     converted = []
     while x:
         converted.append(digits[int(x % base)])
-        x = int(x / base)
+        x = int(x // base)
     if sign < 0:
         converted.append('-')
     converted.reverse()
