@@ -15,5 +15,5 @@ def test_P():
 
 def test_powerset():
     for e1, e2 in zip(powerset([1, 2]),
-                      [[], [1], [2], [1, 2]]):
+                      ((1,), (2,), (1, 2))):
         assert e1 == e2
