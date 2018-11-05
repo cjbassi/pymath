@@ -17,6 +17,7 @@ def is_odd(n: int) -> bool:
 
 
 def is_prime(n: int) -> bool:
+    """https://stackoverflow.com/questions/4114167/checking-if-a-number-is-a-prime-number-in-python"""
     n = abs(n)
     return n > 1 and all((n % i) for i in range(2, 2 + int(sqrt(n) - 1)))
 

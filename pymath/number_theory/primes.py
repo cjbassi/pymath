@@ -12,6 +12,7 @@ __all__ = [
 
 def primes_generator(n: Optional[int] = None) -> Iterator[int]:
     def infinite_primes() -> Iterator[int]:
+        """https://code.activestate.com/recipes/117119/"""
         D: Dict[int, List[int]] = defaultdict(list)
         q = 2
         while True:

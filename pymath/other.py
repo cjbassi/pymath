@@ -38,8 +38,7 @@ def benfords_law(_list: List[float], first_digit=True) -> \
         Dict[int, Tuple[int, float]]:
     """
     Args:
-        first_digit: determines if we are counting the leftmost or rightmost
-        digit
+        first_digit: determines if we are counting the first or last digit
     """
     count: Dict[int, int] = {}
     start = 1 if first_digit else 0

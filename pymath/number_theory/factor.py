@@ -38,6 +38,7 @@ def xlcm(a: int, *terms: int) -> Tuple[int, List[int]]:
 
 
 def xgcd(b: int, a: int) -> Tuple[int, Tuple[int, int]]:
+    """https://en.wikibooks.org/wiki/Algorithm_Implementation/Mathematics/Extended_Euclidean_algorithm"""
     x0, x1, y0, y1 = 1, 0, 0, 1
     while a != 0:
         q, b, a = b // a, a, b % a
@@ -47,6 +48,7 @@ def xgcd(b: int, a: int) -> Tuple[int, Tuple[int, int]]:
 
 
 def prime_factors_generator(n: int) -> Iterator[int]:
+    """https://stackoverflow.com/questions/15347174/python-finding-prime-factors"""
     i = 2
     while i * i <= n:
         if n % i != 0:
@@ -63,6 +65,7 @@ def prime_factors(n: int) -> List[int]:
 
 
 def largest_prime_factor(n: int) -> int:
+    """https://stackoverflow.com/questions/15347174/python-finding-prime-factors"""
     i = 2
     while i * i <= n:
         if n % i:

@@ -6,6 +6,7 @@ __all__ = ['goldbach', 'goldbach_triple']
 
 
 def goldbach(n: int) -> Optional[Tuple[int, int]]:
+    """http://www.4dsolutions.net/cgi-bin/py2html.cgi?script=/ocn/python/primes.py"""
     if n <= 2 or number_types.is_odd(n):
         return None
     _primes = list(primes.primes_up_to(n))
