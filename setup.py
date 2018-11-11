@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='pymath2',
-    version='6.1.1',
+    version='6.1.2',
     description='Easy calculations on the command line with Python',
     author='Caleb Bassi',
     url='https://github.com/cjbassi/pymath',

@@ -34,7 +34,6 @@ REMOVE_GLOBALS = {
     'number_theory',
     'factor',
     'number_types',
-    'analytic',
     'other',
 }
 
