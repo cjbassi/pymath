@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pymath import *
 
-VERSION = '6.1.2'
+VERSION = '6.1.3'
 
 IMPORTS = ['decimal as dec', 'fractions as frac', 'itertools as it', 'math',
            'statistics as stats', 'matplotlib.pyplot as plt', 'numpy as np']
