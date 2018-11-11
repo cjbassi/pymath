@@ -19,7 +19,7 @@ VERSION = '6.1.2'
 IMPORTS = ['decimal as dec', 'fractions as frac', 'itertools as it', 'math',
            'statistics as stats', 'matplotlib.pyplot as plt', 'numpy as np']
 
-REMOVE_GLOBALS = {
+REMOVE_PYMATH_GLOBALS = {
     '__name__',
     '__doc__',
     '__package__',
@@ -47,7 +47,7 @@ if __name__ == '__main__':
                 print("\n".join(IMPORTS))
                 print()
                 print("pymath functions:")
-                print("\n".join([key for key in vars(pymath).keys() if key not in REMOVE_GLOBALS]))
+                print("\n".join([key for key in vars(pymath).keys() if key not in REMOVE_PYMATH_GLOBALS]))
             else:
                 print(eval(sys.argv[1]))
     else:
