@@ -1,14 +1,15 @@
 # pymath
 
-Perform math calculations either on the command line or in the Python repl.
-Imports the following functions/classes/variables into the global namespace for convenience:
+Perform calculations and graphing either on the command line or in the Python repl.  
+Defines several common math functions not in the python standard library (found in the [pymath](https://github.com/cjbassi/pymath/tree/master/pymath) folder), and also imports the following:
 
-- everything from [math](https://docs.python.org/3/library/math.html)
-- everything from [statistics](https://docs.python.org/3/library/statistics.html)
-- the combinatoric functions from [itertools](https://docs.python.org/3/library/itertools.html)
-- the `Fraction` class from [fractions](https://docs.python.org/3/library/fractions.html)
-- the `Decimal` class from [decimal](https://docs.python.org/3/library/decimal.html)
-- additional math functions defined in the [pymath](https://github.com/cjbassi/pymath/tree/master/pymath) folder
+- [math](https://docs.python.org/3/library/math.html)
+- [statistics as stats](https://docs.python.org/3/library/statistics.html)
+- [itertools as it](https://docs.python.org/3/library/itertools.html)
+- [fractions as frac](https://docs.python.org/3/library/fractions.html)
+- [decimal as dec](https://docs.python.org/3/library/decimal.html)
+- [matplotlib.pyplot as plt](https://matplotlib.org/index.html)
+- [numpy as np](https://www.numpy.org/)
 
 ## Installation
 
