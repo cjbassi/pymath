@@ -14,11 +14,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pymath import *
 
+VERSION = '6.1.1'
+
 IMPORTS = ['decimal as dec', 'fractions as frac', 'itertools as it', 'math',
            'statistics as stats', 'matplotlib.pyplot as plt', 'numpy as np']
-
-
-VERSION = '6.1.0'
 
 REMOVE_GLOBALS = {
     '__name__',
